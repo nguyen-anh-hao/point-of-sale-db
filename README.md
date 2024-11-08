@@ -50,14 +50,16 @@ Mở file migration vừa tạo trong thư mục `migrations/` và thêm mã sau
 
 ```js
 exports.up = function(knex) {
-  return knex.schema.createTable('menu_items', function(table) {
-    table.increments('id').primary();           // Tạo cột 'id' làm primary key
-    table.string('name').notNullable();         // Tạo cột 'name' và không cho phép giá trị null
-    table.float('sellPrice').notNullable();     // Tạo cột 'sellPrice' và không cho phép giá trị null
-    table.float('capitalPrice').notNullable();  // Tạo cột 'capitalPrice' và không cho phép giá trị null
-    table.integer('categoryId').notNullable();  // Tạo cột 'categoryId' và không cho phép giá trị null
-    table.timestamps(true, true);               // Tạo các cột 'created_at' và 'updated_at'
-  });
+  return knex.schema
+    .dropTableIfExists('menu_items')              // Xóa bảng 'menu_items' nếu tồn tại
+    .createTable('menu_items', function (table) {
+      table.increments('id').primary();           // Tạo cột 'id' làm primary key
+      table.string('name').notNullable();         // Tạo cột 'name' và không cho phép giá trị null
+      table.float('sellPrice').notNullable();     // Tạo cột 'sellPrice' và không cho phép giá trị null
+      table.float('capitalPrice').notNullable();  // Tạo cột 'capitalPrice' và không cho phép giá trị null
+      table.integer('categoryId').notNullable();  // Tạo cột 'categoryId' và không cho phép giá trị null
+      table.timestamps(true, true);               // Tạo các cột 'created_at' và 'updated_at'
+    });
 };
 
 exports.down = function(knex) {
