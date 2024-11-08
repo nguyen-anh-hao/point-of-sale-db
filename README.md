@@ -24,9 +24,9 @@ Lưu ý: Thay `<POSTGRES_USER>`, `<POSTGRES_PASSWORD>`, và `<POSTGRES_DB>` bằ
 #### Bước 2: Khởi chạy Docker Compose
 - Mở Terminal trong thư mục gốc của dự án và chạy lệnh sau để khởi động các container được định nghĩa trong `docker-compose.yml`:
 
-```bash
-docker-compose up -d
-```
+  ```bash
+  docker-compose up -d
+  ```
 
 Lệnh này sẽ tải và khởi động các container Docker trong chế độ nền.
 
@@ -130,7 +130,25 @@ node app.js
 
 Lệnh này sẽ khởi động ứng dụng Node.js, có thể kiểm tra xem các thay đổi đã được áp dụng thành công hay chưa trên [localhost:3000/menu_items](localhost:3000/menu_items).
 
-#### Cách 2: Sử dụng pgAdmin 4
+#### Cách 2: Sử dụng Terminal
+
+1. Kiểm tra danh sách container đang chạy
+
+    ```bash
+    docker ps
+    ```
+
+    Chú ý cột `NAMES` cuối cùng để lấy giá trị `<CONTAINER_NAME>`.
+   
+3. Thực thi câu lệnh SQL trực tiếp
+
+    ```bash
+    docker exec -it <CONTAINER_NAME> psql -U <POSTGRES_USER> -d <POSTGRES_DB> -c "SELECT * FROM menu_items;"
+    ```
+
+    Lưu ý: Thay `<CONTAINER_NAME>`, `<POSTGRES_USER>`, và `<POSTGRES_DB>` bằng các giá trị thực tế.   
+
+#### Cách 3: Sử dụng pgAdmin 4
 
 1. Đảm bảo [pgAdmin 4](https://www.postgresql.org/download/windows/) đã được cài đặt trên máy tính.
 
