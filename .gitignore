@@ -1,0 +1,51 @@
+# Node.js
+node_modules/
+
+# Npm log files
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Environment files
+.env
+.env.*
+
+# OS-specific files
+.DS_Store          # macOS
+Thumbs.db          # Windows
+
+# Logs
+logs
+*.log
+
+# Temporary files
+tmp
+temp
+
+# Coverage directory (for code coverage reports)
+coverage/
+
+# build output (if you're using a build tool like Webpack or Babel)
+dist/
+build/
+
+# IDE/editor-specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Dependency directory (if you are using a package manager other than npm)
+bower_components/
+
+# Optional npm cache directory
+.npm/
+
+# Next.js build output
+.next/
+
+# SvelteKit build output (if using SvelteKit)
+.svelte-kit/
+
+# TypeScript build output (if you are using TypeScript)
+*.tsbuildinfo
