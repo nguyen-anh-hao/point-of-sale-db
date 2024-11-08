@@ -98,8 +98,8 @@ exports.seed = function(knex) {
   await knex('menu_items').del()
   await knex('menu_items').insert([
     { name: 'Latte', sellPrice: 9.99, capitalPrice: 4.50, categoryId: 1 },
-    { name: 'Americano', sellPrice: 12.99, capitalPrice: 6.00, categoryId: 2 },
-    { name: 'Cappuccino', sellPrice: 7.99, capitalPrice: 3.50, categoryId: 3 },
+    { name: 'Flan', sellPrice: 12.99, capitalPrice: 6.00, categoryId: 2 },
+    { name: 'Cappuccino', sellPrice: 7.99, capitalPrice: 3.50, categoryId: 1 },
   ]);
 };
 ```
