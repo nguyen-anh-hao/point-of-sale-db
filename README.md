@@ -16,7 +16,7 @@ Lưu ý: Thay `<POSTGRES_USER>`, `<POSTGRES_PASSWORD>`, và `<POSTGRES_DB>` bằ
 
 ### 2. Sử dụng Docker
 
-Đảm bảo Docker đã được [cài đặt](https://docs.docker.com/desktop/setup/install/windows-install/). Sau khi đã cài đặt Docker, thực hiện các bước sau:
+Đảm bảo [Docker](https://docs.docker.com/desktop/setup/install/windows-install/) đã được cài đặt. Sau khi đã cài đặt Docker, thực hiện các bước sau:
 
 #### Bước 1: Mở Docker
 - Mở Docker Desktop hoặc ứng dụng Docker để đảm bảo Docker đang hoạt động.
