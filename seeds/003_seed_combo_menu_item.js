@@ -12,16 +12,18 @@ exports.seed = async function(knex) {
   // Insert combo menu items with images
   const comboMenuItems = await knex('combo_menu_items').insert([
     {
-      name: 'Coffee Lovers Combo',
+      name: 'Lovers Combo',
       combo_price: 18.99,
-      description: 'Espresso, Latte, and Cappuccino',
+      description: 'Latte, Cappuccino, Flan, and Tiramisu',
       image: getImageAsBase64('../images/menu-items/coffee-combo.jpg'), // Path to the image
+      quantity: 70,
     },
     {
       name: 'Dessert Delight Combo',
       combo_price: 29.99,
-      description: 'Flan, Cheesecake, and Cannoli',
+      description: 'Mocha, Chocolate Cake, and Glace',
       image: getImageAsBase64('../images/menu-items/dessert-combo.jpg'), // Path to the image
+      quantity: 100,
     },
   ]).returning('id')
 
@@ -30,12 +32,13 @@ exports.seed = async function(knex) {
 
   // Insert items in each combo
   await knex('combo_items').insert([
-    { combo_id: coffeeComboId, menu_item_id: 1, quantity: 1 }, // Latte
-    { combo_id: coffeeComboId, menu_item_id: 3, quantity: 1 }, // Cappuccino
-    { combo_id: coffeeComboId, menu_item_id: 9, quantity: 1 }, // Espresso
+    { combo_id: coffeeComboId, menu_item_id: 1}, // Latte
+    { combo_id: coffeeComboId, menu_item_id: 3}, // Cappuccino
+    { combo_id: coffeeComboId, menu_item_id: 2}, // Flan
+    { combo_id: coffeeComboId, menu_item_id: 4}, // Tiramisu
 
-    { combo_id: dessertComboId, menu_item_id: 2, quantity: 1 }, // Flan
-    { combo_id: dessertComboId, menu_item_id: 6, quantity: 1 }, // Cheesecake
-    { combo_id: dessertComboId, menu_item_id: 4, quantity: 1 }, 
+    { combo_id: dessertComboId, menu_item_id: 5}, // Mocha
+    { combo_id: dessertComboId, menu_item_id: 6}, // Chocolate Cake
+    { combo_id: dessertComboId, menu_item_id: 9}, // Glace
   ]);
 };
