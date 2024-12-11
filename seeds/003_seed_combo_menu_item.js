@@ -2,7 +2,7 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.seed = async function(knex) {
+exports.seed = async function (knex) {
   const { getImageAsBase64 } = require('../utils/getImageAsBase64');
 
   // Clear existing data
@@ -30,15 +30,15 @@ exports.seed = async function(knex) {
   const coffeeComboId = comboMenuItems[0].id;
   const dessertComboId = comboMenuItems[1].id;
 
-  // Insert items in each combo
+  await knex('combo_items').del();
   await knex('combo_items').insert([
-    { combo_id: coffeeComboId, menu_item_id: 1}, // Latte
-    { combo_id: coffeeComboId, menu_item_id: 3}, // Cappuccino
-    { combo_id: coffeeComboId, menu_item_id: 2}, // Flan
-    { combo_id: coffeeComboId, menu_item_id: 4}, // Tiramisu
+    { combo_id: coffeeComboId, menu_item_id: 1 }, // Latte
+    { combo_id: coffeeComboId, menu_item_id: 3 }, // Cappuccino
+    { combo_id: coffeeComboId, menu_item_id: 2 }, // Flan
+    { combo_id: coffeeComboId, menu_item_id: 4 }, // Tiramisu
 
-    { combo_id: dessertComboId, menu_item_id: 5}, // Mocha
-    { combo_id: dessertComboId, menu_item_id: 6}, // Chocolate Cake
-    { combo_id: dessertComboId, menu_item_id: 9}, // Glace
+    { combo_id: dessertComboId, menu_item_id: 5 }, // Mocha
+    { combo_id: dessertComboId, menu_item_id: 6 }, // Chocolate Cake
+    { combo_id: dessertComboId, menu_item_id: 9 }, // Glace
   ]);
 };
