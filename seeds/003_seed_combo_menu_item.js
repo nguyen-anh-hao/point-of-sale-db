@@ -5,22 +5,18 @@
 exports.seed = async function (knex) {
   const { getImageAsBase64 } = require('../utils/getImageAsBase64');
 
-  // Clear existing data
-  await knex('combo_items').del();
-  await knex('combo_menu_items').del();
-
   // Insert combo menu items with images
   const comboMenuItems = await knex('combo_menu_items').insert([
     {
       name: 'Lovers Combo',
-      combo_price: 18.99,
+      combo_price: 77000,
       description: 'Latte, Cappuccino, Flan, and Tiramisu',
       image: getImageAsBase64('../images/menu-items/coffee-combo.jpg'), // Path to the image
       quantity: 70,
     },
     {
       name: 'Dessert Delight Combo',
-      combo_price: 29.99,
+      combo_price: 40000,
       description: 'Mocha, Chocolate Cake, and Glace',
       image: getImageAsBase64('../images/menu-items/dessert-combo.jpg'), // Path to the image
       quantity: 100,
