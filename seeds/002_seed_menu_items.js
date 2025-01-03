@@ -4,7 +4,6 @@
  */
 exports.seed = async function (knex) {
   const imageHelper = require('../utils/getImageAsBase64');
-  await knex('menu_items').del();
   await knex('menu_items').insert([
     { name: 'Latte', sell_price: 15000, capital_price: 12000, category_id: 1, quantity: 10, image: imageHelper.getImageAsBase64('../images/menu-items/latte.png') },
     { name: 'Flan', sell_price: 20000, capital_price: 17000, category_id: 2, quantity: 100, image: imageHelper.getImageAsBase64('../images/menu-items/flan.png') },
